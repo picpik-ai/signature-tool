@@ -6,50 +6,43 @@
 
 ## API 签名说明
 
-#### Platform API
-用于Picpik平台上的资源管理API
+Picpik API分为以下两类：
+### Platform API
+**[API文档](#https://github.com/JoshuaYin/signature-tool/blob/main/platform_api_doc.md)**
 
-签名字段为 `Signature`
+用于Picpik平台提供的**资源管理的API**，签名字段为 **`Signature`**。签名所需秘钥是 **`PublicKey`,`PrivateKey`** ，可以从 **[PICPIK用户中心](https://studio.picpik.ai/user-center)** 获取。
 
 
+### Service API
 
-#### Picpik中所创建的节点的业务服务API
+API文档在您所购买的Picpik服务节点中，可访问 **`http://your_service_ip:80`** 。
 
-## 秘钥说明
+用于Picpik中所购买的服务节点提供的**业务API**。签名字段为 **`signature`**。签名所需秘钥是 **`ApiKey`** 可以从 **[PICPIK用户应用信息](https://studio.picpikai.com/v2/application-service)** 获取。
 
-> **`PublicKey`,`PrivateKey`** 用于Picpik平台上的资源管理API计算签名使用。可以从 **[PICPIK用户中心](https://studio.picpik.ai/user-center)** 获取。
-> <br>
-> **`ApiKey`** 用于您在Picpik中所创建的节点的业务服务API计算签名使用。可以从 **[PICPIK用户应用中心](https://studio.picpikai.com/v2/application-service)** 获取。
 
+<br><br>
+**本文档中的代码示例语言均为Python3**
 
 ## 数据模拟
-> 本例中以Python3为例
 
 ```python
 public_key = 'abcdefg'
 private_key = '123456'
-api_key  = 'abcdefg'
+api_key  = 'ABCDEFG'
 ```
 
 您可以使用上述的 `PublicKey` , `PrivateKey` , `ApiKey` 调试代码， 如得到与后文一致的签名结果，即表示代码是正确的，可再换为您自己对应的Key，以及业务所需的其它API请求参数。
 
-本例中假设用户请求参数串如下:
-
-**实际使用过程中，应包含：除`signature`外所有已填写的参数。**
-
-> Picpik平台API参数
 
 ```json
+# Platform API参数案例
 {
     "Action": "StartPicpikApp",
-    "PublicKey": "ALLak9M4cNdHXKOJAJJ4k8Hh1hZS2EgJF1D0FlPwfl",
-    "Signature": "0131f4e4296f3ca8e1220b47247e83a4315ea8e1",
-    "AppId": "xxx",
-    "request_uuid":"b91fcfbe-bb35-47ce-a168-bd6252c75270"
+    "PublicKey": "abcdefg",
+    "AppId": "your_app_id"
 }
-```
 
-```json
+# Service API参数案例
 {
     "prompt": "这是生成图片所需的提示词。",
     "width": 512,
@@ -60,12 +53,22 @@ api_key  = 'abcdefg'
 
 ## 构造签名
 
-> 如果[示例代码](#编码示例)中包含您使用的语言，建议直接使用其中的`gen_signature`函数构造签名。
+### 拼接参数，构造被签名参数串
 
-如果示例代码中没有您使用的语言，可以联系我们补充或者按照以下规则生成签名：
+按照请求参数的名称进行升序排列，并以排序后的keyvalue，拼接所有参数。并在最后加上 `PrivateKey` 或者 `ApiKey` 。
 
-### 1. 按照请求参数的名称进行升序排列
+* Platform API最后拼接 `PrivateKey` 
 ```json
+{
+    "Action": "StartPicpikApp",
+    "PublicKey": "abcdefg",
+    "AppId": "your_app_id"
+}
+```
+> 拼接后的content = "**ActionStartPicpikAppAppIdyour_app_idPublicKeyabcdefg123456**"
+
+* Service API最后拼接 `ApiKey` 
+```python
 {
     "height": 512,
     "prompt": "这是生成图片所需的提示词。",
@@ -73,14 +76,7 @@ api_key  = 'abcdefg'
     "width": 512
 }
 ```
-
-### 2. 构造被签名参数串
-
-被签名串的构造规则为: 被签名串 = 所有请求参数拼接(无需 HTTP 转义)。**并在本签名串的结尾拼接 API 密钥（`ApiKey`）**。
-
-```
-height512prompt这是生成图片所需的提示词。refImage如果是图生图，此处填原图的base64字符串width512abcdefg
-```
+> 拼接后的content = "**height512prompt这是生成图片所需的提示词。refImage如果是图生图，此处填原图的base64字符串width512ABCDEFG**"
 
 > **注意：**
 > - 对于 string 类型，若长度超过128个字符，只取前128个字符参与签名算法即可。**注意是前128个字符，不是bytes**

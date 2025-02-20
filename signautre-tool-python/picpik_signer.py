@@ -55,6 +55,7 @@ class PicpikSigner:
 
     def sign_service(self, body):
         content = self.__map_2_string(body, "signature", str_limit=128) + self.api_key
+        print(content)
         md5_hash = hashlib.md5()
         md5_hash.update(content.encode('utf-8'))
         md5 = md5_hash.hexdigest()
@@ -62,5 +63,6 @@ class PicpikSigner:
 
     def sign_platform(self, body):
         content = self.__map_2_string(body) + self.private_key
+        print(content)
         hashed = hashlib.sha1(content.encode()).hexdigest()
         return hashed

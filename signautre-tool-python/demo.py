@@ -23,8 +23,9 @@ if __name__ == "__main__":
     print(f"payload={json.dumps(service_payload, indent=4, ensure_ascii=False)}\n")
 
     console_payload = {
-        "Action": "ListModels",
-        "PublicKey": public_key
+        "Action": "StartPicpikApp",
+        "PublicKey": "abcdefg",
+        "AppId": "your_app_id"
     }
 
     # 用于操作管理 picpik 实例节点的API
