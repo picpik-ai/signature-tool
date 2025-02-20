@@ -28,6 +28,6 @@ Picpik API分为以下两类：
 
 
 > 签名工具适配的语言将会逐渐完善，若以下没有您所需要的目标语言，可以尝试以下方式：
-> * 联系我们：  **[develop@picpik.ai](develop@picpik.ai)** 
-> * 自行研发：[签名规则](signature_rule.md)
+> * 联系我们：develop@picpik.ai
+> * 自行研发：**[签名规则](signature_rule.md)**
 
