@@ -8,7 +8,7 @@
 
 Picpik API分为以下两类：
 ### Platform API
-**[API文档](#https://github.com/JoshuaYin/signature-tool/blob/main/platform_api_doc.md)**
+**[API文档](https://github.com/JoshuaYin/signature-tool/blob/main/platform_api_doc.md)**
 
 用于Picpik平台提供的**资源管理的API**，签名字段为 **`Signature`**。签名所需秘钥是 **`PublicKey`,`PrivateKey`** ，可以从 **[PICPIK用户中心](https://studio.picpik.ai/user-center)** 获取。
 
