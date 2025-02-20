@@ -1,3 +1,6 @@
+# 使用示例
+
+```python
 import json
 
 import picpik_signer
@@ -32,3 +35,5 @@ signature = signer.sign_platform(console_payload)
 console_payload['signature'] = signature
 
 print(f"console_payload={json.dumps(console_payload, indent=4, ensure_ascii=False)}\n")
+
+```

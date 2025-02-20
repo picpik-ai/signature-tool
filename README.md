@@ -24,10 +24,10 @@ Picpik API分为以下两类：
 
 ## 工具使用示例
 
-签名工具适配的语言将会逐渐完善，若以下没有您所需要的目标语言，可以尝试以下方式：
-* 联系我们：  **[develop@picpik.ai](develop@picpik.ai)** 
-* 自行研发：[签名规则](https://github.com/picpik-ai/signature-tool/blob/main/signature_rule.md)
-
-
-
 ### [python3](https://github.com/picpik-ai/signature-tool/tree/main/signautre-tool-python)
+
+
+> 签名工具适配的语言将会逐渐完善，若以下没有您所需要的目标语言，可以尝试以下方式：
+> * 联系我们：  **[develop@picpik.ai](develop@picpik.ai)** 
+> * 自行研发：[签名规则](https://github.com/picpik-ai/signature-tool/blob/main/signature_rule.md)
+
