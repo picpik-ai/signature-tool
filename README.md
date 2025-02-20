@@ -10,7 +10,7 @@ Picpik API分为以下两类：
 ### Platform API
 用于Picpik平台提供的**资源管理的API**。
 
-* API文档：[https://github.com/picpik-ai/signature-tool/blob/main/platform_api_doc.md](https://github.com/picpik-ai/signature-tool/blob/main/platform_api_doc.md)
+* API文档：[https://github.com/picpik-ai/signature-tool/blob/main/platform_api_doc.md](platform_api_doc.md)
 * 秘钥： **`PublicKey`,`PrivateKey`** ，可以从 **[PICPIK用户中心](https://studio.picpik.ai/user-center)** 获取。
 
 
@@ -24,10 +24,10 @@ Picpik API分为以下两类：
 
 ## 工具使用示例
 
-### [python3](https://github.com/picpik-ai/signature-tool/tree/main/signautre-tool-python)
+### [python3](signautre-tool-python/demo.md)
 
 
 > 签名工具适配的语言将会逐渐完善，若以下没有您所需要的目标语言，可以尝试以下方式：
 > * 联系我们：  **[develop@picpik.ai](develop@picpik.ai)** 
-> * 自行研发：[签名规则](https://github.com/picpik-ai/signature-tool/blob/main/signature_rule.md)
+> * 自行研发：[签名规则](signature_rule.md)
 
