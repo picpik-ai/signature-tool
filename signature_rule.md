@@ -87,7 +87,7 @@ api_key  = 'ABCDEFG'
     "Action": "StartPicpikApp",
     "PublicKey": "abcdefg",
     "AppId": "your_app_id",
-    "signature": "c5e65ad1936ff695436917bf807d2281db33e7a3"
+    "Signature": "c5e65ad1936ff695436917bf807d2281db33e7a3"
 }
 ```
 
