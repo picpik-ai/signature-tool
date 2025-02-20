@@ -10,7 +10,7 @@ Picpik API分为以下两类：
 ### Platform API
 用于Picpik平台提供的**资源管理的API**。
 
-* API文档：[platform_api_doc.md](platform_api_doc.md)
+* API文档：**[platform_api_doc.md](platform_api_doc.md)**
 * 秘钥： **`PublicKey`,`PrivateKey`** ，可以从 **[PICPIK用户中心](https://studio.picpik.ai/user-center)** 获取。
 
 
