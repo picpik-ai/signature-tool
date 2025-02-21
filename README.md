@@ -11,7 +11,7 @@ Picpik API分为以下两类：
 用于Picpik平台提供的**资源管理的API**。
 
 * API文档：**[platform_api_doc.md](platform_api_doc.md)**
-* 秘钥： **`PublicKey`,`PrivateKey`** ，可以从 **[PICPIK用户中心](https://studio.picpik.ai/user-center)** 获取。
+* 秘钥： **`PublicKey`,`PrivateKey`** ，可以从 **[PICPIK用户中心](https://studio.picpikai.com/user-center)** 获取。
 
 
 ### Service API
@@ -24,7 +24,7 @@ Picpik API分为以下两类：
 
 ## 工具使用示例
 
-### [python3](signautre-tool-python/demo.md)
+### [python3](signautre-tool-python/)
 
 
 > 签名工具适配的语言将会逐渐完善，若以下没有您所需要的目标语言，可以尝试以下方式：
