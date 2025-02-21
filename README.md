@@ -24,7 +24,7 @@ Picpik API分为以下两类：
 
 ## 工具使用示例
 
-* [python3](signautre-tool-python/)
+* [Python3](signautre-tool-python/)
 * [JavaScript](signautre-tool-js/)
 
 
