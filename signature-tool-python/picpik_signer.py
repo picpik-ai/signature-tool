@@ -54,11 +54,10 @@ class PicpikSigner:
         return sorted(obj.keys())
 
     def sign_service(self, body):
-        content = self.__map_2_string(body, "signature", str_limit=128) + self.api_key
-        md5_hash = hashlib.md5()
-        md5_hash.update(content.encode('utf-8'))
-        md5 = md5_hash.hexdigest()
-        return md5
+        content = self.__map_2_string(body, str_limit=128) + self.api_key
+        sha1 = hashlib.sha1()
+        sha1.update(content.encode('utf-8'))
+        return sha1.hexdigest()
 
     def sign_platform(self, body):
         content = self.__map_2_string(body) + self.private_key

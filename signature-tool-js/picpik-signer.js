@@ -56,9 +56,9 @@ class PicpikSigner {
   }
 
   signService(body) {
-    const content = this._mapToString(body, "signature", 128) + this.apiKey;
-    const md5 = crypto.createHash('md5').update(content, 'utf-8').digest('hex');
-    return md5;
+    const content = this._mapToString(body, 128) + this.apiKey;
+    const sha1 = crypto.createHash('sha1').update(content, 'utf-8').digest('hex');
+    return sha1;
   }
 
   signPlatform(body) {
