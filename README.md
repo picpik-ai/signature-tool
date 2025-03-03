@@ -26,6 +26,7 @@ Picpik API分为以下两类：
 
 * [Python3](signature-tool-python/)
 * [JavaScript](signature-tool-js/)
+* [GoLang](signature-tool-go/)
 
 
 > 签名工具适配的语言将会逐渐完善，若以上没有您所需要的目标语言，可以尝试以下方式：
