@@ -77,7 +77,7 @@ api_key  = 'ABCDEFG'
 #### Service API
 
 使用 **md5** 编码签名串，生成最终签名，即是请求参数 `signature` 的值。
-按照上述算法，本例中，计算出的 `signature` 为 **f082f8b52582dda6c0e976a39d2196b2** 。
+按照上述算法，本例中，计算出的 `signature` 为 **bb4c607024f6eeb6198d070b658b2a9270fd468d** 。
 
 ### 3. 将签名结果放入请求参数中
 #### Platform API
@@ -99,6 +99,6 @@ api_key  = 'ABCDEFG'
     "width": 512,
     "height": 512,
     "refImage": "如果是图生图，此处填原图的base64字符串",
-    "signature": "f082f8b52582dda6c0e976a39d2196b2"
+    "signature": "bb4c607024f6eeb6198d070b658b2a9270fd468d"
 }
 ```
