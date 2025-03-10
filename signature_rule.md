@@ -76,7 +76,7 @@ api_key  = 'ABCDEFG'
 
 #### Service API
 
-使用 **md5** 编码签名串，生成最终签名，即是请求参数 `signature` 的值。
+使用 **SHA1** 编码签名串，生成最终签名，即是请求参数 `signature` 的值。
 按照上述算法，本例中，计算出的 `signature` 为 **bb4c607024f6eeb6198d070b658b2a9270fd468d** 。
 
 ### 3. 将签名结果放入请求参数中
