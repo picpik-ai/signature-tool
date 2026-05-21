@@ -68,8 +68,12 @@ func (ps *PicpikSigner) simpleToString(v interface{}) string {
 }
 
 func (ps *PicpikSigner) formatString(v string, limit int) string {
-	if limit > 0 && len(v) > limit {
-		return v[:limit]
+	if limit <= 0 {
+		return v
+	}
+	runes := []rune(v)
+	if len(runes) > limit {
+		return string(runes[:limit])
 	}
 	return v
 }

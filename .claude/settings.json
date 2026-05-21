@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//private/tmp/sigtest/go/**)",
+      "Bash(go run *)"
+    ]
+  }
+}
